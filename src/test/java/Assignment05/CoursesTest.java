@@ -13,16 +13,21 @@ import static org.junit.Assert.assertTrue;
 public class CoursesTest {
 
     Course course;
+    Student student;
     CourseDaoList dao = new CourseDaoList();
 
     @Before
-    public void init(){
+    public void init()
+    {
         course = new Course(1,"Testing", LocalDate.of(2019,10,10),4);
+        student = new Student(1,"TestStudent","testStudent@hotmail.com","testVägen 18");
+        course.register(student);
     }
 
     @After
     public void reset()
     {
+        course.unregister(student);
         course = null;
     }
 
@@ -43,20 +48,5 @@ public class CoursesTest {
         assertTrue(result.contains("2019-10-10"));
         assertTrue(result.contains("4"));
     }
-
-    @Test
-    public void testRegisterStudentToCourse()
-    {
-
-    }
-
-
-    @Test
-    public void testUnRegisterStudentFromCourse()
-    {
-
-    }
-
-
 
 }//End of coursesTestClass

@@ -73,7 +73,7 @@ public class StudentDaoListTest {
     @Test
     public void testRemoveStudent()
     {
-
+        assertTrue(String.valueOf(true), testStudentDaoList.deleteStudent(testStudent));
     }
 
 }

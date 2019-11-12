@@ -81,7 +81,7 @@ public class CourseDaoListTest {
     @Test
     public void testRemoveCourse()
     {
-
+        assertTrue(String.valueOf(true), testCourseDaoList.removeCourse(testCourse));
     }
 
 }
